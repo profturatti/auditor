@@ -11,6 +11,9 @@ def index():
     ip = request.remote_addr
     data_hora = datetime.now()
 
+    if request.method == 'GET':
+        return render_template('index.html')
+
     if request.method == 'POST':
         nome = request.form.get('nome')
         telefone = request.form.get('telefone')
@@ -29,7 +32,7 @@ def index():
         writer = csv.writer(f)
         writer.writerow([ip, data_hora.strftime('%d/%m/%Y'), data_hora.strftime('%H:%M:%S')])
 
-    return render_template('index.html', index=index)
+    return render_template('index.html')
 
 @app.route('/acessos')
 def mostrar_acessos():
