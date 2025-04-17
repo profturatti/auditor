@@ -12,6 +12,15 @@
   ],
   "routes": [
     {
+      "src": "/",
+      "dest": "/templates/index.html",
+      "methods": ["GET", "OPTIONS"],
+      "headers": {
+        "Access-Control-Allow-Methods": "GET",
+        "Access-Control-Allow-Headers": "Content-Type"
+      }
+    },
+    {
       "src": "/static/(.*)",
       "dest": "/static/$1"
     },
