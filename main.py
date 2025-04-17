@@ -11,9 +11,6 @@ def index():
     ip = request.remote_addr
     data_hora = datetime.now()
 
-    if request.method == 'GET':
-        return render_template('index.html')
-
     if request.method == 'POST':
         nome = request.form.get('nome')
         telefone = request.form.get('telefone')
