@@ -29,7 +29,7 @@ def index():
         writer = csv.writer(f)
         writer.writerow([ip, data_hora.strftime('%d/%m/%Y'), data_hora.strftime('%H:%M:%S')])
 
-    return render_template('index.html', title='Home')
+    return render_template('index.html', index=index)
 
 @app.route('/acessos')
 def mostrar_acessos():
