@@ -12,16 +12,12 @@
   ],
   "routes": [
     {
-      "src": "/",
-      "dest": "/templates/index.html"
+      "src": "/(.*)",
+      "dest": "/main.py"
     },
     {
       "src": "/static/(.*)",
       "dest": "/static/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/main.py"
     }
   ]
 }
