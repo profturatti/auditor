@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Contatos</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 90%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #aaa;
+            padding: 8px 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center;">Contatos Registrados</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>IP</th>
+                <th>Data</th>
+                <th>Hora</th>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>E-mail</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ip, data, hora, nome, telefone, email in contatos %}
+                <tr>
+                    <td>{{ ip }}</td>
+                    <td>{{ data }}</td>
+                    <td>{{ hora }}</td>
+                    <td>{{ nome }}</td>
+                    <td>{{ telefone }}</td>
+                    <td>{{ email }}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">Nenhum contato registrado.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
